@@ -11,4 +11,4 @@ Route::get('/', function () {
 
 Route::get('home', [HomeController::class, 'payment']);
 Route::get('contact', [ContactController::class, 'index']);
-Route::get('create-users', [UserController::class, 'create']);
+Route::get('user', [UserController::class, 'create']);
