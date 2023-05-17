@@ -55,12 +55,12 @@ class UserController extends Controller
     //         return $user;
     //     }
     // }
-    public function index()
-	{
-		$users = User::all();
+    // public function index()
+	// {
+	// 	$users = User::all();
 
-		return $users;
-	}
+	// 	return $users;
+	// }
 
     public function show($id, $email = 'mamun@gmail.com')
     {
