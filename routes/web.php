@@ -22,21 +22,12 @@ Route::get('from', [FromController::class, 'payment']);
 // Route::patch('update-user-name', 'UserController@updateName');
 // Route::delete('delete-user', 'UserController@delete');
 
-Route::get('user-list', 		'UserController@index')->name('user_list');
-Route::get('users/{id}/profile/{email?}', 		'UserController@show');
+Route::get('create-users', function () {
+    $data = [
+        'name' => 'Sabbir',
+        'email' => 'mdsabbir477470@gmail.com',
+        'password' => 'sabbir111'
+    ];
 
-
-
-Route::get('users/{id}', 	'UserController@display')->where('id', '[0-9]+');
-Route::get('users/create',  'UserController@create');
-
-Route::post('users', 		'UserController@store');
-Route::put('users', 		'UserController@update');
-Route::patch('users', 		'UserController@updateName');
-Route::delete('users', 		'UserController@delete');
-
-Route::redirect('/test', '/test-any');
-
-Route::any('test-any', function () {
-    return 'I am from Any';
+    DB::table('users')->insert($data);
 });
