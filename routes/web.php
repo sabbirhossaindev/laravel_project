@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FromController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,12 +24,15 @@ Route::get('from', [FromController::class, 'payment']);
 // Route::patch('update-user-name', 'UserController@updateName');
 // Route::delete('delete-user', 'UserController@delete');
 
-Route::get('create-users', function () {
+Route::get('create-customer', function () {
     $data = [
         'name' => 'Sabbir',
         'email' => 'mdsabbir477470@gmail.com',
-        'password' => 'sabbir111'
+        'address' => 'Rangpur',
+        'balance' => 10000,
     ];
 
-    DB::table('users')->insert($data);
+    DB::table('customers')->insert($data);
 });
+
+Route::get('customers', [CustomerController::class, 'index']);
