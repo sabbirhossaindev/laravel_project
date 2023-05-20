@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 class CustomerController extends Controller
 {
     public function index(){
-        return BD::table('customers')->get();
+        $customers = BD::table('customers')->get();
+        var_dump($customers); // php ta aita 
+        dd($customers); // laravel a aita
     }
 }
