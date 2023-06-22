@@ -12,6 +12,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// user tha ke input;
+Route::get('/me/{name}', function ($userName) {
+    $userName = ucwords($userName);
+    return view("welcome {$userName}");
+});
+
 Route::get('home', [HomeController::class, 'payment']);
 Route::get('contact', [ContactController::class, 'index']);
 Route::get('user', [UserController::class, 'create']);
