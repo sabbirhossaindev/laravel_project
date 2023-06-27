@@ -8,6 +8,5 @@
 </head>
 <body>
     <h1>This is Home page in my laravel project. I am {{$name}}.I read is diploma in {{$class}} semester. My Diploma roll is {{$roll}}.I love coding. My name is Sabbir Hossain</h1>
-
 </body>
 </html>
