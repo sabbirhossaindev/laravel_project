@@ -18,6 +18,8 @@ Route::get('/me/{name}', function ($userName) {
     return view("welcome {$userName}");
 });
 
+// user tha ke input;
+
 
 Route::get('home', [HomeController::class, 'payment']);
 Route::get('contact', [ContactController::class, 'index']);
